@@ -253,7 +253,7 @@ void delnetworkmodule(void *module)
 	}
 }
 
-int getline(struct socket_info *sinfo)
+int getline_server(struct socket_info *sinfo)
 {
 	while (1) {
 

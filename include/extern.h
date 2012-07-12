@@ -25,7 +25,7 @@ extern int connect_to_host(struct socket_info *, char *, int);
 extern int register_to_server(struct socket_info *) ;
 extern void check_connections(void);
 extern void disconnected(struct socket_info *) ;
-extern int getline(struct socket_info *) ;
+extern int getline_server(struct socket_info *) ;
 extern struct socket_info *GetNewSocket(void (*handler) (int, socket_info *)) ;
 extern struct socket_info *GetModuleSocket(void *module, void (*handler) ()) ;
 extern void FreeSocket(struct socket_info *);

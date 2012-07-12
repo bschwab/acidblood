@@ -35,7 +35,7 @@ void init_serverinfo()
 static void server_action(int action, struct socket_info *sinfo)
 {
 	if (action == NET_READ) {
-		if (getline(sinfo) == 1)
+		if (getline_server(sinfo) == 1)
 			parse_server(sinfo);
 		return;
 	}
