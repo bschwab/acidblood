@@ -1,0 +1,3 @@
+#!/bin/sh
+echo "Stopping bot..."
+kill `cat ../logs/acid.pid`

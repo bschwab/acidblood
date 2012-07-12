@@ -1,0 +1,67 @@
+Acidblood 1.2.X Command Summary
+
+shutdown - access level required 0	
+	forces the bot to quit irc gracefully
+
+reload - access level required 0
+	instructs the bot to reload its user file without having to restart
+	
+help - access level required 0,1
+	displays help file
+
+op <channel> -  must be in user file
+	ops user on <channel>
+
+op <channel> <password> -  must be in user file, REQPASS set to ON
+	ops user on <channel>
+
+opuser <channel> <user> -  must be in user file
+	ops user <user> on <channel>
+
+deop <channel> <nick> - access level required 0,1  
+	deops <nick> on <channel>
+
+say <channel> <text> - access level required 0,1 
+	says <text> on <channel>
+
+raw <command> - access level required 0
+	executes raw irc command. only for users versed in irc syntax
+
+nick <nickname> - access level required 0
+	changes the nickname
+
+kick <channel> <nickname> - access level required 0,1
+	kicks <nickname> from <channel>
+
+join <channel> <key> - access level required 0, key is optional
+	makes the bot join <channel>. if the channel requires a 
+	key, then <key> is necessary.
+
+part <channel> - access level required 0
+	makes the bot leave <channel>
+
+mode <channel> <flags> - access level required 0
+	sets mode on <channel> with specified <flags>
+
+topic <channel> <text> - access level required 0
+	sets the topic on <channel> to <text>
+
+stats - accless level 0,1
+	reports the time the bot has been running in days, hours, minutes
+
+ctcp <on/off> - access level 0
+	turns on or off CTCP level responses
+
+autoop <on/off> - access level 0
+	turns on or off automatic ops on join
+
+version - must be in user file
+	reports version
+
+time - must be in user file
+	reports time
+
+action - must be in user file
+	sends action to channel
+
+

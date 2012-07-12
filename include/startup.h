@@ -1,0 +1,11 @@
+void init_usercommands(void) ;
+void init_ctcp(void) ;
+void init_srvcommands(void) ;
+void init_networking(void) ;
+void init_serverinfo(void) ;
+void init_numeric(void) ;
+void init_timers(void) ;
+void init_events(void) ;
+void init_conf(void) ;
+void read_main_config(void) ;
+void init_modules(void) ;

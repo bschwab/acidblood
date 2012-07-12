@@ -1,0 +1,16 @@
+
+Channel join and part detection should be converted use numerics instead of
+usercount. 
+	-Gerhard
+
+Config data needs to be moved into per server structures.
+	-Gerhard 
+
+Config format needs something nicer.
+	-Gerhard
+
+Need a services module for each network
+	-Gerhard
+
+Max connections should be a config option instead of hard coded
+	-Gerhard

@@ -1,0 +1,12 @@
+
+MODULES=disabled
+
+# for compilers that support rdynamic (needed for modules)
+#CIFLAGS+=-rdynamic
+
+# Module specific compile flags
+MFLAGS=
+
+#LIFLAGS= -ldl
+# for solaris
+#LIFLAGS+= -ldl -lnsl -lsocket

@@ -1,0 +1,22 @@
+Acidblood 1.2.X Command Summary
+shutdown - access level required 0	
+reload - access level required 0
+help - access level required 0,1
+op <channel> -  must be in user file
+op <channel> <password> -  must be in user file, REQPASS set to ON
+opuser <channel> <user> -  must be in user file
+deop <channel> <nick> - access level required 0,1  
+say <channel> <text> - access level required 0,1 
+raw <command> - access level required 0
+nick <nickname> - access level required 0
+kick <channel> <nickname> - access level required 0,1
+join <channel> <key> - access level required 0, key is optional
+part <channel> - access level required 0
+mode <channel> <flags> - access level required 0
+topic <channel> <text> - access level required 0
+stats - accless level 0,1
+ctcp <on/off> - access level 0
+autoop <on/off> - access level 0
+version - must be in user file
+time - must be in user file
+action - must be in user file

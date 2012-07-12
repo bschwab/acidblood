@@ -1,0 +1,7 @@
+# Acidblood user file
+# nickname:ip:level:channel(s):password
+# level 0 - master
+# levels > 0 - users
+
+joe:*.corp.com:0:all
+joe:*.blah.com:0:all:testpass

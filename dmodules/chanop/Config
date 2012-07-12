@@ -1,0 +1,31 @@
+#!/bin/sh
+
+INSTALLER=`egrep "^INSTALLER=" Makefile 2>/dev/null | sed -e 's/^[^=]*[ 	]*=\(.*\)/\1/'`
+MODNAME=`egrep "^MODNAME=" Makefile 2>/dev/null | sed -e 's/^[^=]*[ 	]*=\(.*\)/\1/'`
+
+ANS=""
+while [ -z "$ANS" ] ; do
+	echo -n "Install $MODNAME? [Y/N/?] "
+	read ANS
+	
+	case "$ANS" in 
+		No | no | NO | N | n )
+			echo "$MODNAME disabled"
+			rm -f enabled
+			exit ;;
+		Yes | YES | yes | Y | y)
+			touch enabled 
+			echo "$MODNAME enabled" ;;
+		"?" )
+			cat $MODNAME.inf 
+			ANS="" ;;
+		* ) ANS="" ;;
+	esac 
+done 
+
+cat > $INSTALLER << _EOF_
+#!/bin/sh
+
+echo "installing ${MODNAME}"
+cp ${MODNAME}.so $1/${MODNAME}.so
+_EOF_

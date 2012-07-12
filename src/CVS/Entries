@@ -1,0 +1,24 @@
+/Makefile/1.9/Sat Aug 29 16:59:38 2009//
+/conf.c/1.11/Thu Mar 26 15:08:27 2009//
+/ctcp.c/1.30/Fri Aug 10 20:47:17 2007//
+/events.c/1.4/Fri Aug 10 20:50:16 2007//
+/list.c/1.47/Fri Aug 10 20:47:17 2007//
+/log.c/1.15/Thu Mar 19 17:57:15 2009//
+/main.c/1.41/Tue Dec 16 15:50:14 2008//
+/match.c/1.2/Fri Jan 12 03:47:17 2007//
+/modules.c/1.28/Tue Dec 16 14:25:16 2008//
+/network.c/1.89/Thu Mar 19 19:21:14 2009//
+/numeric.c/1.35/Tue Nov 24 21:53:56 2009//
+/parser.c/1.40/Fri Jan 12 03:47:17 2007//
+/readconf.c/1.22/Tue Jul 21 13:45:24 2009//
+/sendmsg.c/1.2/Thu Mar 26 15:08:27 2009//
+/server.c/1.28/Thu Mar 26 15:08:27 2009//
+/signal.c/1.17/Fri Jan 12 03:47:17 2007//
+/srvcommands.c/1.52/Thu Mar 26 15:08:27 2009//
+/startup.c/1.22/Thu Mar 26 15:08:27 2009//
+/system.c/1.7/Tue Dec 16 15:50:14 2008//
+/timer.c/1.9/Wed Feb 28 12:55:42 2007//
+/tracking.c/1.45/Thu Mar 26 15:06:05 2009//
+/users.c/1.5/Fri Aug 10 20:47:17 2007//
+/usrcommands.c/1.79/Thu Sep 24 12:18:35 2009//
+D

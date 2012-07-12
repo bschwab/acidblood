@@ -1,0 +1,248 @@
+Acidblood 1.2
+Copyright (C) 1997-2009 Bryan Schwab
+http://www.acidblood.com/
+
+Welcome! 
+
+The world of IRC (Internet Relay Chat) has grown so vast it
+has become a nitemare to manage your own channel. IRC can also become
+really addicting, making you want to stay up all night chatting
+with your net buddies.
+
+That is why I wrote Acidblood. I saw that there was other bots out
+there, but none that I realy liked.  So I fired up gcc and got to
+work.  Now after months of labor, I have a finished product. 
+worlds apart from version 0.01 that was originally written in Perl :)
+
+Installation: 
+
+Make sure you are running gnu make before you attempt to install the bot.
+To install the bot, you must run "make" or "gmake".  For debugging purposes, 
+you might want to add -DDEBUG to the Makefile.  This will spew out extra info
+to acid.debug so that the problem can be more easily diagnosed.  It will
+also create a file called acid.debug.  Here it will record everything that
+it sees. If you run into a problem where it crashes, this file is also important.
+Debugging doesn't necessarily slow it down, but does slowly eat up disk space on 
+big channels.
+
+For Solaris, uncomment the SOLFLAGS line in the Makefile before you run make.
+
+If you are compiling for multiple systems you probably want to remove
+-march=native from the compile flags.
+
+The next step is to customize your bot before you run it. This is 
+accomplished by editing conf/acid.config.
+
+Here is an example:
+
+# Acidblood configuration file
+
+# Bot user name
+USER=kurt
+
+# Bot nick name
+NICK=kurt
+
+# Alternate nick name if first is taken
+ALT=kurt2
+
+# Bot fullname
+FULLNAME=Kurt
+
+# Command Char defines the first letter of a command
+COMMANDCHAR=!
+
+# Channel bot lives on
+# If a channel has a key in it, make sure
+# you put parenthesis around it
+# example: #mychannel(mykey)
+CHANNEL=#acidtest,#blah,#mychannel(mykey)
+
+# IRC server
+SERVER=some.domain.com
+
+# IRC port, usually 6660-6670
+PORT=6667
+
+# Version displayed on CTCP Version
+# Might want to change this to not make it obvious its a bot
+VERSION=Acidblood 1.2
+
+# Away message - uncomment to make the bot set itself away
+#AWAYMSG=I am away
+
+# Set CTCP ON/OFF
+# Looks non-suspicious if the bot respons to ctcp
+CTCP=OFF
+
+# Set NickServ routines ON/OFF
+NSERV=OFF
+
+# Nickserv password
+NSPASS=testtest
+
+# image name (what shows up in ps - doesnt work on all platforms, try it)
+IMAGE=Acidblood
+
+# Auto-Op ON or OFF on startup
+AUTOOP=ON
+
+# Require passwords for op
+# Overrides autoop
+REQPASS=ON
+
+# keepalive in seconds
+KEEPALIVE=15
+
+# server timeout in minutes
+TIMEOUT=10
+
+# Mode when joining server
+MODE=+iw
+
+Here is how it will look in IRC:
+#acidtest  kurt      H   ~kurt@some.domain.com (0 Kurt)
+
+The user name is what you see with the tilde (~). The server actually
+checks to see if that is your actual login. If it doesnt know for sure
+it uses a tilde to denote that.  
+
+The nick name is the what is seen on the left next to the channel name.
+
+The full name is what people see on the far right.
+
+Commandchar is the character to let the bot know to execute a command.
+
+Channel will be that channel that you want the bot to live in. Channels are seperated
+by commas. Any channel key must have parenthesis around it, like the example above.
+
+Server is the irc server you want it to run on. 
+
+Port is the port of the server to attach to, usually 6660-6669.
+   (This might require some experimenting)
+
+Of course, comments are used with a "#".
+
+Version is what users will see when they do a CTCP version on the bot. You can change
+this to whatever you wish. Just copy and paste the version string of a different client.
+
+Away message will set the bot away with that message if it is uncommented.
+
+CTCP ON/OFF will allow or disallow CTCP commands to the bot.
+
+NSERV ON/OFF will turn on support for NickServs. These are bots that proect nick names on a server.
+Put your password after NSPASS and set NSERVER=ON to enable NickServ logins.
+
+IMAGE sets the executable name, which is viewed via the "ps" command. You can set this to something
+else like "emacs" to prevent detection of the bot running.
+
+AUTOOP ON/OFF sets the default setting for auto ops to either ON or OFF. This can be changed once the bot
+has started using the "autoop" command.
+
+REQPASS ON/OFF will override the value of AUTOOP and will require the user to message the bot with 
+the correct password to be granted ops. This will prevent users from spoofing IP addresses to be auto oped.
+With REQPASS on you need to identify yourself to the bot before it will recognize you. You can use either the identify
+or the op command.
+
+KEEPALIVE sets the time in seconds which the bot communicates back to the server to keep the connection.
+
+TIMEOUT sets the time in minutes before timing out from the IRC server. Set higher for slower connections.
+
+MODE sets the mode of the bot when it connects to the server.
+
+Now you must configure your user database so the bot will
+know who to op, and who is a master allowing execution of all
+its functions. This is located in conf/acid.users:
+
+Here is an example:
+  
+# Acidblood user file
+# nickname:ip:level:channel:password
+# level 0 - master
+* levels > 0 - users
+
+blah:some.domain.com:1:#acidblood
+blah2:some.domain.com:1:#acidblood:testpass
+bryan:*.domain.com:0:all
+foo:some.domain.com:1:#acidblood,#test
+
+As you can see, the field is as follows:
+ircnickname:ip address:level:channel:password (only used if REQPASS is ON)
+
+The ircnickname is the one they use, if a user uses more than one nickname, 
+you can use an asterisk here to allow them all. Example:
+*:*.domain.com:0:all
+
+Note: all nicknames are case insensitive.
+
+The IP address is very important. This is how the bot knows that the
+nickname is the correct nick name.  You can put the full IP address
+here if you know the machine that the user will be accessing irc from.
+You may also add wildcards as such:
+ircnickname:*.blah.com:1
+
+The wildcards work from right to left, so if the address matches up to the
+star, it will be validated.
+
+The next field denotes access level.  The highest (i.e. master) is 0. Others
+are in the works.
+
+The next field signifies the channels the bot will allow the user to perform 
+commands in and which channel the user gets ops in. "all" signifies that the bot
+with allow this user to perform commands regardless of the channel. Note that channels
+must be seperated with commas.
+
+The last field is the password that must be submitted for ops to be given. This is used if 
+REQPASS is set to ON.
+
+Acidblood Command Summary
+
+Here are a few examples. For ALL commands see "Commands" in the docs directory.
+
+shutdown - access level required 0
+reload - access level required 0
+help - access level required 0,1
+op <channel> -  must be in user file, level irrelevant
+op <channel> <password> -  must be in user file, level irrelevant, REQPASS is ON
+say <channel> <text> - access level required 0,1 
+raw <command> - access level required 0
+nick <nickname> - access level required 0
+kick <channel> <nickname> - access level required 0,1
+join <channel> <key> - access level required 0, key is optional
+part <channel> - access level required 0
+mode <channel> <flags> - access level required 0
+topic <channel> <text> - access level required 0
+stats - access level 0,1
+
+To execute these commands, send a private message for example:
+/msg kurt reload
+
+After you have built the bot, edited your acid.conf and 
+edited your acid.users, you are now ready to run the bot.
+
+You can also modify docs/help. The bot will display this file to a known user
+when they execute the help command. You can tailor this file to your liking.
+
+To run the bot type "acidblood". Sometimes the directory you are in
+is not in your currect directory, you may need to type "./acidblood".
+
+Note, that sometimes, such aliases as us.undernet.org are on a rotating
+dns basis and if you wait a couple minutes, you can hit one that will be up.
+This takes experimentation.
+
+Modules:
+
+To learn about how to build your own module checkout the docs/modules directory.
+
+Bugs:
+
+Please submit all bugs and feature requests to acidblood@darkice.com
+
+Helping Out:
+
+I am really busy with a full time job, but I love to see Acidblood grow with features and
+become more and more popular. If you would like to add features and modify the source, just send 
+me your mods and I will include them in an official release and give you credit.
+
+
+

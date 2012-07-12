@@ -1,0 +1,12 @@
+MODULES=enabled
+
+# for compilers that support rdynamic (needed for modules)
+CIFLAGS+=-rdynamic
+
+#for compilors that need this
+MFLAGS+=-fPIC
+
+# Linux needs this flag for modules
+LIFLAGS=-ldl
+
+MODLINK:=sh $(TOPDIR)/dist/modlink.Linux

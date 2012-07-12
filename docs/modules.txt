@@ -1,0 +1,32 @@
+Ok heres my first attempt at documentation.  I won't really know what 
+all to document until I get some people actually trying to use this.  
+So if you have any questions or if I've not explaned this enough email 
+your questions to gmack@innerfire.net and I'll do my best to answer them.
+
+	Gerhard
+
+
+Modules are easier to write then most think.  They remove the need to
+patch the code following updates to the main tree and provide an excellent
+way to move all of the extra features out of the main code without having
+to resort to slower scripting.
+
+Modules are actually blindingly easy to implement:
+First instead of a main() you need int module_init() and
+int module_shutdown().
+
+module_init is for everything you want the module to
+do when you startup.  This includes calling the hooks to the events you
+want to grab and initialize any variables or structures your module uses.
+
+module_shutdown is where you drop the hooks and free any structures you
+allocated.  You must make sure this works correctly or you will cause the
+bot to leak memory or worse yet crash on module unload.
+
+Other than that it's like any other C program.  Copy any of the acidblood
+headders that you need for your program and once your done it's a simple
+compile:
+
+gcc -c newmod.c
+ld -shared newmod.o -soname newmod.so -o newmod.so
+

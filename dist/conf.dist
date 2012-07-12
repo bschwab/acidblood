@@ -1,0 +1,83 @@
+# Acidblood configuration file
+
+# Bot user name
+USER=acidbot
+
+# Bot nick name
+NICK=acidbot
+
+# Alternate nick name if first is taken
+ALT=acidb0t
+
+# Bot fullname
+FULLNAME=Acidblood
+# Command Char defines the first letter of a command 
+COMMANDCHAR=!
+# 
+# Channel bot lives on
+# If a channel has a key in it, make sure
+# you put parenthesis around it
+# example: #mychannel(mykey)
+CHANNELS=#acidblood
+
+# IRC port, usually 6660-6670
+PORT=6667
+
+# IRC server
+SERVER=us.undernet.org
+
+# IRC server password (if required)
+#SRVPASS=password
+
+# Version displayed on CTCP Version
+# Might want to change this to not make it obvious its a bot
+# VERSION=Acidblood
+
+# Away message - uncomment to make the bot set itself away
+#AWAYMSG=I am away
+
+# Mode when joining server
+MODE=+iw
+
+# Set CTCP ON/OFF
+CTCP=OFF
+
+# Set NickServ routines ON/OFF
+NSERV=OFF
+
+# Nickserv password
+NSPASS=testtest
+
+# Auto-Op ON or OFF on startup 
+AUTOOP=ON
+
+# Require passwords for op
+# Overrides autoop
+REQPASS=OFF
+
+# User level for ops
+OPLEVEL=0
+
+# User level for half op
+HOPLEVEL=0
+
+# User level for voice
+VOICLEVEL=0
+
+# keepalive in seconds
+#KEEPALIVE=15
+
+# server timeout in minutes
+TIMEOUT=10
+
+# Maximum connection attempts to a server before the bot gives up
+MAXTRIES=50
+
+# required number of seconds between commands from each user
+CMDDELAY=1
+
+# required number of seconds between CTCP requests from each user
+CTCPDELAY=5
+
+# Userlevel needed to bypass flood protection
+FLOODEXEMPT=0

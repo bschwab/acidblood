@@ -1,0 +1,15 @@
+The following people have worked on the Acidblood project:
+
+Developers:
+  Bryan Schwab [bryan@darkice.com] - Developer
+  Gerhard Mack [gmack@innerfire.net] - Developer
+
+Contributors:
+  Michael Smith [mwsmith@darkmage.net] - Testing and feature ideas
+  Alexander Baxevanis [noiz@usa.net] - Alerting me to the ConferenceRoom problem
+  David Grant [dave@reach.net] - Network patches 
+  Favio Rene [favio@uas.uasnet.mx] - NickServ help and testing 
+  Michel Vaillancourt [misha@atlantic-online.ns.ca] - Mode suggestion
+  Fabien Germain [fabien@linux-azur.org] - Server passwords
+  Klemens Kasemaa [klem@estpak.ee] - IPv6 Support
+  Dan Williams [dan_williams@sunshine.net] - Bot joined trigger

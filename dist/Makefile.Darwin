@@ -1,0 +1,17 @@
+
+MODULES=Disabled
+
+# for compilers that support rdynamic (needed for modules)
+#CIFLAGS+=-rdynamic
+
+#LIFLAGS= -ldl
+# for solaris
+#LIFLAGS+= -ldl -lnsl -lsocket
+
+# Module specific compile flags
+MFLAGS=
+
+#Linker flags for modules
+SHAREDFLAGS= -dynamiclib
+
+MODOPT= -install_name

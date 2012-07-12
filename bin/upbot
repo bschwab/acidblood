@@ -1,0 +1,27 @@
+#!/usr/bin/perl
+# 
+# Acidblood upbot perl script that 
+# reloads the bot when the server dies
+#
+# sample crontab entry
+# 0,5,10,15,20,25,30,35,40,45,50,55 * * * * /the/bots/directory/executable
+
+# Put your directory here
+chdir("/home/subcube/acidblood/logs/");
+
+
+$pid=`cat acid.pid`;
+$data=`/bin/ps -axw | grep -v grep | grep $pid`;
+$data2=`/bin/ps -axw | grep -v grep | grep cidblood`;
+
+if ($data && $data2) {}
+else {
+     open(FP,"upbot.count");
+     $number=<FP>;
+     close (FP);
+     open(FP,">upbot.count");
+     $number++;
+     print FP $number;
+     close (FP);
+     exec("../bin/acidblood");
+}

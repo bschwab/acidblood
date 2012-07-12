@@ -1,0 +1,107 @@
+Acidblood Version History
+
+1.2.21  Fixed crash in command parameter handler
+        Fixed directory traversal bug in the seen module
+
+1.2.20  Fixed IDLE handling and keepalive code.
+
+1.2.19  Removed two options from the config files in preperation for multi
+	server support. (MODULE= and IMAGE=) 
+	Added password for login for Undernet
+	Fixed tight loop reconnection bug
+
+1.2.18	Darwin OSX support updated for XCode 2.4.1
+	
+1.2.17  Change GCC options depending on version 
+		-debugged by Demrit
+	Make compiling more strict on newer GCC
+	More efficient timer search.
+
+1.2.16  Module support fixes
+
+1.2.15  new improved module build system 
+	auto voice and halfop
+	flood protection
+	event hook for when the bot joins a new channel
+	per OS makefiles
+		-Linux support
+		-FreeBSD support by Miguel Vazquez Gocobachi
+ 
+1.2.14  Ipv6 support by Klemens Kasemaa
+	   -Upgraded to new networking code by Gerhard
+        Multi Server Support
+	Auto Reconnect
+	Event Hooks
+	Timers
+
+1.2.13  User tracking
+	User customizable modules 
+	Keepalive fixes
+	Server timeout fixes
+	Performance enhancements
+	Bug fixes
+
+1.2.12  Patches from Gerhard Mack:
+	    divides everything into msgtabs for easier extention and less cpu
+	    cleans up main.c and several parameter lists.
+	    adds the following helper functions:
+	       -log
+	       -debug_log
+	       -privmsg
+	       -notice
+	       -ctcp
+	       -irc_sprintf
+	    chops several 4kb off the executable size
+	Server passwords
+
+1.2.11  Network fixes
+	User defined mode on startup
+
+1.2.10  Keepalive bug fix
+	Network fixes
+	Code cleanups
+	Passwords
+	Added timeout to conf file
+
+1.2.9   Linux fixes
+	Undernet fixes
+	Parsing fixes
+	Configurable image name
+	Keepalive
+	Default setting for autoops
+	Wildcard nicknames
+	RPM
+
+1.2.8   Improved networking
+	Fixed memory leaks
+	NickServ support
+	Code fixes/cleanups
+	CTCP responses to channels (configurable)
+	stats command
+
+1.2.7   Server negotiation cleanups
+	User limitations by channel in user file
+	User has the option to set the bot away
+	CTCP Support
+	User controlled CTCP and Autoop
+	Deop command
+        Ver command
+	Cleaned up log output
+
+1.2.6   Support for channels with keys
+	Added uptime command
+
+1.2.5   Support for ConferenceRoom servers
+	Added help
+	Updated documentation
+
+1.2.4   Added join and part commands
+
+1.2.3   Includes Solaris Makefile and Solaris bug fixes
+
+1.2.2   Added op, say, raw, nick and kick commands
+
+1.2.1	Added reload and shutdown commands
+
+1.2.0	Multi-channel with auto-op. Directory and code cleanup
+

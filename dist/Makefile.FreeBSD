@@ -1,0 +1,6 @@
+MODULES=enabled
+
+# for compilers that support rdynamic (needed for modules)
+CIFLAGS+=-rdynamic
+
+MODLINK:=sh $(TOPDIR)/dist/modlink.FreeBSD
